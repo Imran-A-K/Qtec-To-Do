@@ -12,6 +12,8 @@
 
 .btns {
   display: flex;
+  justify-content: end;
+  width: 100%;
   gap: 1em;
 }
 

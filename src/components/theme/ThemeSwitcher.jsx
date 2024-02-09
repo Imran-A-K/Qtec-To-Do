@@ -30,14 +30,7 @@ const ThemeSwitcher = () => {
   }, [hue]);
 
   return (
-    <aside
-      className={styles.wrapper}
-      // style={{
-      //   backgroundColor: isColorPicking
-      //     ? "hsl(var(--muted) / .6)"
-      //     : "transparent",
-      // }}
-    >
+    <aside className={styles.wrapper}>
       {isColorPicking ? (
         <div className={styles.themeSwitch}>
           <input

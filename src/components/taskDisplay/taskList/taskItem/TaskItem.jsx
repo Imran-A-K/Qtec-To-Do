@@ -39,7 +39,9 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
           padding: "0.4rem 0.6rem",
           fontSize: "0.7em",
           borderRadius: "1rem",
+
           color: "#fff",
+
           textAlign: "center",
         }}
       >

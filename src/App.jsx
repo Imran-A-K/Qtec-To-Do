@@ -4,6 +4,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import useLocalStorage from "./hooks/useLocalStorage";
 import TaskList from "./components/taskDisplay/taskList/Tasklist";
 import EditForm from "./components/taskEdit/EditForm";
+import ThemeSwitcher from "./components/theme/ThemeSwitcher";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("todo-tasks", []);
@@ -86,6 +87,7 @@ function App() {
           enterEditMode={enterEditMode}
         />
       )}
+      <ThemeSwitcher />
     </div>
   );
 }
