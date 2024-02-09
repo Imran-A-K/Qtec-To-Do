@@ -5,6 +5,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import TaskList from "./components/taskDisplay/taskList/Tasklist";
 import EditForm from "./components/taskEdit/EditForm";
 import ThemeSwitcher from "./components/theme/ThemeSwitcher";
+import { taskPriorities } from "./constants/priorityConstants";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("todo-tasks", []);
@@ -12,7 +13,7 @@ function App() {
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
-
+  const [filter, setFilter] = useState("Show all");
   const addTask = (task) => {
     setTasks((prevState) => [...prevState, task]);
   };
@@ -78,6 +79,21 @@ function App() {
           Add Task
           <PlusIcon width={24} height={24} />
         </button>
+        <select
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+          className="select"
+          required
+        >
+          <option value="" disabled hidden>
+            Show all
+          </option>
+          {taskPriorities.map((priority) => (
+            <option key={priority} value={priority}>
+              {priority}
+            </option>
+          ))}
+        </select>
       </div>
       {tasks && (
         <TaskList

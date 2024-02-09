@@ -118,6 +118,7 @@ h1 {
   display: grid;
   gap: clamp(2rem, 3.5vmax, 8rem);
   text-align: center;
+  min-width: 50vw;
 }
 
 hr {
@@ -173,6 +174,11 @@ hr {
   justify-content: space-between;
   gap: 0.6em;
   font-size: var(--_size);
+  width: 100%;
+}
+.addTask > .btn {
+  width: 100%;
+  padding: 0.1em;
 }
 .todo {
   display: flex;
