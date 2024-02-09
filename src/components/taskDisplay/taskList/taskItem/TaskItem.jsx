@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import styles from "./TaskItem.module.css";
 
-// Library imports
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 import { TrashIcon } from "@heroicons/react/24/outline";
@@ -37,9 +36,11 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
       <span
         style={{
           backgroundColor: priorityColors[task.priority],
-          padding: "0.2rem 0.7rem",
-          fontSize: "0.8em",
+          padding: "0.4rem 0.6rem",
+          fontSize: "0.7em",
           borderRadius: "1rem",
+          color: "#fff",
+          textAlign: "center",
         }}
       >
         {task.priority}

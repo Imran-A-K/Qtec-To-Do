@@ -3,6 +3,7 @@ import AddTaskDialogue from "./components/taskAddition/AddTaskDialog";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import useLocalStorage from "./hooks/useLocalStorage";
 import TaskList from "./components/taskDisplay/taskList/Tasklist";
+import EditForm from "./components/taskEdit/EditForm";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("todo-tasks", []);
@@ -58,7 +59,13 @@ function App() {
       {addingTask ? (
         <AddTaskDialogue addTask={addTask} closeAddTask={closeAddTask} />
       ) : null}
-
+      {isEditing ? (
+        <EditForm
+          editedTask={editedTask}
+          updateTask={updateTask}
+          closeEditMode={closeEditMode}
+        />
+      ) : null}
       <div className="addTask">
         <button
           className="btn"
