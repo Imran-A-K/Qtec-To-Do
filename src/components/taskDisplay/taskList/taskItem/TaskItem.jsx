@@ -32,21 +32,16 @@ const TaskItem = ({ task, deleteTask, toggleTask, enterEditMode }) => {
             <CheckIcon strokeWidth={2} width={24} height={24} />
           </p>
         </label>
+        <span
+          style={{
+            backgroundColor: priorityColors[task.priority],
+            padding: "0.6rem",
+            borderRadius: "1rem",
+            marginTop: "0.4rem",
+          }}
+        ></span>
       </div>
-      <span
-        style={{
-          backgroundColor: priorityColors[task.priority],
-          padding: "0.4rem 0.6rem",
-          fontSize: "0.7em",
-          borderRadius: "1rem",
 
-          color: "#fff",
-
-          textAlign: "center",
-        }}
-      >
-        {task.priority}
-      </span>
       <div className={styles["task-group"]}>
         <button
           className="btn"
