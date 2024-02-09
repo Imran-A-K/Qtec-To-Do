@@ -14,11 +14,33 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [filter, setFilter] = useState("showAll");
+  const sorter = (arr) => {
+    let initialArray = [...arr];
 
+    initialArray.sort((a, b) => {
+      if (a.priority === "High") {
+        return -1;
+      } else if (a.priority === "Medium" && b.priority === "High") {
+        return 1;
+      } else if (a.priority === "Medium" && b.priority === "Low") {
+        return -1;
+      } else if (a.priority === "Medium" && b.priority === "Medium") {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+
+    let result = [...initialArray];
+
+    return result;
+  };
+
+  const sortedTasks = sorter(tasks);
   const filteredTasks =
     filter === "showAll"
-      ? tasks
-      : tasks.filter(
+      ? sortedTasks
+      : sortedTasks.filter(
           (task) => task.priority.toLowerCase() === filter.toLowerCase()
         );
 

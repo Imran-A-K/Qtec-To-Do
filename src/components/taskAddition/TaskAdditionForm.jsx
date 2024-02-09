@@ -10,7 +10,7 @@ const TaskAddingForm = ({ addTask }) => {
     addTask({
       name: task,
       checked: false,
-      id: Date.now(),
+      id: crypto.randomUUID(),
       priority: priority,
     });
     setTask("");
