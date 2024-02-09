@@ -178,7 +178,7 @@ hr {
 }
 .addTask > .btn {
   width: 100%;
-  padding: 0.1em;
+  padding: 0.1em 0.2em;
 }
 .todo {
   display: flex;

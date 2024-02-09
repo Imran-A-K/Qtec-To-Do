@@ -13,7 +13,15 @@ function App() {
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
-  const [filter, setFilter] = useState("Show all");
+  const [filter, setFilter] = useState("showAll");
+
+  const filteredTasks =
+    filter === "showAll"
+      ? tasks
+      : tasks.filter(
+          (task) => task.priority.toLowerCase() === filter.toLowerCase()
+        );
+
   const addTask = (task) => {
     setTasks((prevState) => [...prevState, task]);
   };
@@ -85,9 +93,7 @@ function App() {
           className="select"
           required
         >
-          <option value="" disabled hidden>
-            Show all
-          </option>
+          <option value="showAll">Show all</option>
           {taskPriorities.map((priority) => (
             <option key={priority} value={priority}>
               {priority}
@@ -95,14 +101,14 @@ function App() {
           ))}
         </select>
       </div>
-      {tasks && (
+      {filteredTasks ? (
         <TaskList
-          tasks={tasks}
+          tasks={filteredTasks}
           deleteTask={deleteTask}
           toggleTask={toggleTask}
           enterEditMode={enterEditMode}
         />
-      )}
+      ) : null}
       <ThemeSwitcher />
     </div>
   );
