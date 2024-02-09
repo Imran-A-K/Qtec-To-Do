@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddTaskDialogue from "./components/taskAddition/AddTaskDialog";
 import { PlusIcon } from "@heroicons/react/24/outline";
 import useLocalStorage from "./hooks/useLocalStorage";
+import TaskList from "./components/taskDisplay/taskList/Tasklist";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("todo-tasks", []);
@@ -70,6 +71,14 @@ function App() {
           <PlusIcon width={24} height={24} />
         </button>
       </div>
+      {tasks && (
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          toggleTask={toggleTask}
+          enterEditMode={enterEditMode}
+        />
+      )}
     </div>
   );
 }
