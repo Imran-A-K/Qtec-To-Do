@@ -47,10 +47,12 @@ function App() {
 
   const addTask = (task) => {
     setTasks((prevState) => [...prevState, task]);
+    toast.success("Task added successfully");
   };
 
   const deleteTask = (id) => {
     setTasks((prevState) => prevState.filter((t) => t.id !== id));
+    toast.success("Task deleted successfully");
   };
 
   const toggleTask = (id) => {

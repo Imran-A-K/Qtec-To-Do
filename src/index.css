@@ -160,6 +160,10 @@ hr {
     0 0 0 -0.2em hsl(var(--accent));
 }
 
+.btn:disabled {
+  background-color: hsl(var(--accent) / 0.7);
+}
+
 .btn:focus {
   outline: none;
 }
