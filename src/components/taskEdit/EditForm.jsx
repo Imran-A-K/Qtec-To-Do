@@ -71,6 +71,10 @@ const EditForm = ({ editedTask, updateTask, closeEditMode }) => {
           className="btn"
           aria-label={`Confirm edited task to now read ${updatedTaskName}`}
           type="submit"
+          disabled={
+            updatedTaskName === editedTask.name &&
+            updatedPriority === editedTask.priority
+          }
         >
           Update
         </button>

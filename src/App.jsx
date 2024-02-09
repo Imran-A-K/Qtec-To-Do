@@ -6,6 +6,7 @@ import TaskList from "./components/taskDisplay/taskList/Tasklist";
 import EditForm from "./components/taskEdit/EditForm";
 import ThemeSwitcher from "./components/theme/ThemeSwitcher";
 import { taskPriorities } from "./constants/priorityConstants";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [tasks, setTasks] = useLocalStorage("todo-tasks", []);
@@ -66,6 +67,7 @@ function App() {
           : t
       )
     );
+    toast.success("Task updated successfully");
     closeEditMode();
   };
 
@@ -85,6 +87,7 @@ function App() {
   };
   return (
     <div className="container">
+      <Toaster />
       <header>
         <h1>Todo List</h1>
       </header>

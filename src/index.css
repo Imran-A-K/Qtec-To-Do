@@ -217,6 +217,8 @@ hr {
   border-radius: var(--_radius);
   padding: 0.35em 0.55em;
   width: 100%;
+  font-size: 0.7em;
+  letter-spacing: 0.05em;
   background-color: hsl(var(--muted));
   caret-color: hsl(var(--accent));
   box-shadow: 0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent) / 0.8);
@@ -267,7 +269,7 @@ hr {
   padding-inline: 2vmax;
   display: grid;
   place-items: center;
-  background-color: hsl(var(--bg) / 0.6);
+  background-color: hsl(var(--bg) / 0.5);
 }
 
 [role="dialog"] .todo {
