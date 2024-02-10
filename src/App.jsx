@@ -90,7 +90,7 @@ function App() {
   return (
     <div className="container">
       <Toaster />
-      <header>
+      <header className="header">
         <h1>Todo List</h1>
       </header>
       {addingTask ? (

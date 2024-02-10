@@ -9,7 +9,11 @@
   --_size: 1.5rem;
   place-items: center;
 }
-
+@media screen and (max-width: 720px) {
+  .wrapper {
+    width: 100%;
+  }
+}
 .btns {
   display: flex;
   justify-content: end;

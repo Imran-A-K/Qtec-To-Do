@@ -278,11 +278,25 @@ hr {
 
 [role="dialog"] .todo {
   max-width: 80ch;
-  min-width: 30ch;
+  /* min-width: 30ch; */
   min-height: 40vh;
   padding: 2em 1.3em 1.3em;
   background-color: hsl(var(--bg) / 1);
   border-radius: var(--_radius);
   border: 0.1em solid hsl(var(--accent) / 0.3);
   box-shadow: 0 -1em 3em hsl(var(--muted)), 0 1em 3em hsl(var(--accent) / 0.2);
+}
+
+@media screen and (min-width: 500px) {
+  [role="dialog"] .todo {
+    min-height: 40vh;
+  }
+}
+@media screen and (max-width: 720px) {
+  .addTask {
+    flex-direction: column;
+  }
+  .header {
+    margin-top: 28px;
+  }
 }

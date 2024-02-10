@@ -11,12 +11,13 @@ import styles from "./ThemeSwitcher.module.css";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 const ThemeSwitcher = () => {
-  const [hue, setHue] = useLocalStorage("todo.color", "240");
+  const [hue, setHue] = useLocalStorage("todo.color", "73");
 
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  //   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
-    "react-todo.theme",
-    defaultDark ? "dark" : "light"
+    "todo.theme",
+    "dark"
+    // defaultDark ? "dark" : "light"
   );
 
   const [isColorPicking, setIsColorPicking] = useState(false);
