@@ -295,8 +295,15 @@ hr {
   }
 }
 @media screen and (max-width: 720px) {
+  .select {
+    max-height: 100px;
+  }
+  .input {
+    max-height: 100px;
+  }
   [role="dialog"] .todo {
     min-width: 80vw;
+    min-height: 20vh;
   }
   .addTask {
     flex-direction: column;
