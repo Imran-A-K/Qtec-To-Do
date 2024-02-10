@@ -195,6 +195,12 @@ hr {
   margin-left: auto;
   font-size: 0.8em;
 }
+.todo-count {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .wrapper {
   flex: 1 1 100%;
   position: relative;
@@ -310,5 +316,10 @@ hr {
   }
   .header {
     margin-top: 28px;
+  }
+  .todo-count {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
   }
 }

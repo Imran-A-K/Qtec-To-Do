@@ -38,6 +38,7 @@ function App() {
   };
 
   const sortedTasks = sorter(tasks);
+  const completedTasks = sortedTasks.filter((task) => task.checked);
   const filteredTasks =
     filter === "showAll"
       ? sortedTasks
@@ -92,16 +93,28 @@ function App() {
       <Toaster />
       <header className="header">
         {tasks.length ? (
-          <h1>
-            My todos :{" "}
-            <span
-              style={{
-                color: "hsl(var(--accent))",
-              }}
-            >
-              {tasks.length}
-            </span>
-          </h1>
+          <div className="todo-count">
+            <h2>
+              Total todos :{" "}
+              <span
+                style={{
+                  color: "hsl(var(--accent))",
+                }}
+              >
+                {tasks.length}
+              </span>
+            </h2>
+            <h2>
+              Completed :{" "}
+              <span
+                style={{
+                  color: "hsl(var(--accent))",
+                }}
+              >
+                {completedTasks.length}
+              </span>
+            </h2>
+          </div>
         ) : (
           <h1>Get things done!</h1>
         )}
