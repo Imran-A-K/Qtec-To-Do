@@ -220,6 +220,7 @@ hr {
   border: none;
   border-radius: var(--_radius);
   padding: 0.35em 0.55em;
+
   width: 100%;
   font-size: 0.7em;
   letter-spacing: 0.05em;
@@ -239,6 +240,7 @@ hr {
   border-radius: var(--_radius);
   padding: 0.35em 0.55em;
   width: 100%;
+
   background-color: hsl(var(--muted));
   font: inherit;
   caret-color: hsl(var(--accent));
@@ -287,12 +289,15 @@ hr {
   box-shadow: 0 -1em 3em hsl(var(--muted)), 0 1em 3em hsl(var(--accent) / 0.2);
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 721px) {
   [role="dialog"] .todo {
-    min-height: 40vh;
+    min-width: 40vw;
   }
 }
 @media screen and (max-width: 720px) {
+  [role="dialog"] .todo {
+    min-width: 80vw;
+  }
   .addTask {
     flex-direction: column;
   }
