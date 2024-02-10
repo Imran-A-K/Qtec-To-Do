@@ -91,7 +91,20 @@ function App() {
     <div className="container">
       <Toaster />
       <header className="header">
-        <h1>Todo List</h1>
+        {tasks.length ? (
+          <h1>
+            My todos :{" "}
+            <span
+              style={{
+                color: "hsl(var(--accent))",
+              }}
+            >
+              {tasks.length}
+            </span>
+          </h1>
+        ) : (
+          <h1>Get things done!</h1>
+        )}
       </header>
       {addingTask ? (
         <AddTaskDialogue addTask={addTask} closeAddTask={closeAddTask} />
